@@ -7,21 +7,28 @@
     <style>
         body {
             display: flex;
-            flex-direction: column; /* Hiển thị ảnh theo chiều dọc */
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
+            overflow: auto; 
         }
         img {
-            max-width: 90%; /* Giới hạn chiều rộng của ảnh */
-            height: auto;   /* Giữ tỷ lệ ảnh gốc */
-            margin: 10px 0;  /* Khoảng cách giữa các ảnh */
+            max-width: 100%; 
+            height: auto;   
+            margin: 10px 0; 
+        }
+        .image-container {
+            max-width: 90%;   
+            max-height: 90vh; 
+            overflow-y: auto; 
         }
     </style>
 </head>
 <body>
-    <img src="HD2.jpg" alt="Hình đơn giản">
+    <div class="image-container">
+        <img src="HD2.jpg" alt="Hình đơn giản">
+    </div>
 </body>
 </html>
