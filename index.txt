@@ -20,6 +20,8 @@
     </style>
 </head>
 <body>
-    <img src="hd1.jpg;hd2.jpg;hd3.jpg" alt="Hình đơn giản">
+    <img src="images/hd1.jpg" alt="Hình đơn giản">
+    <img src="images/hd2.jpg" alt="Hình đơn giản">
+    <img src="images/hd3.jpg" alt="Hình đơn giản">
 </body>
 </html>
