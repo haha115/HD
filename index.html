@@ -7,6 +7,7 @@
     <style>
         body {
             display: flex;
+            flex-direction: column; /* Hiển thị ảnh theo chiều dọc */
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -14,16 +15,15 @@
             background-color: #f0f0f0;
         }
         img {
-            max-width: 90%;
-            height: auto;
-		margin: 10px 0;
+            max-width: 90%; /* Giới hạn chiều rộng của ảnh */
+            height: auto;   /* Giữ tỷ lệ ảnh gốc */
+            margin: 10px 0;  /* Khoảng cách giữa các ảnh */
         }
     </style>
 </head>
 <body>
-	<img src="hd1.jpg" alt="Hình đơn giản">
-	<img src="hd2.jpg" alt="Hình đơn giản">
-	<img src="hd3.jpg" alt="Hình đơn giản">
-
+    <img src="hd1.jpg" alt="Hình đơn giản">
+    <img src="hd2.jpg" alt="Hình đơn giản">
+    <img src="hd3.jpg" alt="Hình đơn giản">
 </body>
 </html>
