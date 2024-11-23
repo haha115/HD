@@ -40,7 +40,7 @@
 <body>
     <!-- Thông báo chờ -->
     <div class="message" id="waiting-message">
-        Đợi chờ là hạnh phúc!
+        Đợi xíu!
     </div>
 
     <!-- Phần hiển thị ảnh -->
@@ -50,7 +50,7 @@
 
     <script>
         // Thời gian mở: 23h ngày 24/11/2024
-        const openingTime = new Date('2024-11-24T23:00:00');
+        const openingTime = new Date('2024-11-23T23:00:00');
 
         function checkTime() {
             // Lấy giờ hiện tại
@@ -72,7 +72,6 @@
                     `Còn ${hours} giờ, ${minutes} phút, ${seconds} giây.`;
             }
         }
-
         // Kiểm tra thời gian mỗi giây
         setInterval(checkTime, 1000);
         checkTime(); // Chạy ngay khi tải trang
