@@ -12,23 +12,70 @@
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
-            overflow: auto; 
+            font-family: Arial, sans-serif;
+        }
+        .message, .image-container {
+            text-align: center;
+        }
+        .message {
+            font-size: 1.5rem;
+            color: #555;
         }
         img {
-            max-width: 90%; 
-            height: auto;   
-            margin: 10px 0; 
+            max-width: 100%; /* Giới hạn chiều rộng của ảnh */
+            height: auto;   /* Giữ tỷ lệ gốc của ảnh */
+            margin: 10px 0; /* Khoảng cách giữa các ảnh */
         }
+        /* Nếu ảnh quá cao, có thể thêm cuộn dọc */
         .image-container {
-            max-width: 70%;   
-            max-height: 90vh; 
-            overflow-y: auto; 
+            max-width: 70%;   /* Giới hạn chiều rộng của ảnh */
+            max-height: 90vh; /* Giới hạn chiều cao ảnh để không bị quá dài */
+            overflow-y: auto; /* Cho phép cuộn dọc nếu ảnh dài */
+        }
+        .hidden {
+            display: none; /* Ẩn phần tử */
         }
     </style>
 </head>
 <body>
-    <div class="image-container">
+    <!-- Thông báo chờ -->
+    <div class="message" id="waiting-message">
+        Đợi chờ là hạnh phúc!
+    </div>
+
+    <!-- Phần hiển thị ảnh -->
+    <div class="image-container hidden" id="image-container">
         <img src="HD2.jpg" alt="Hình đơn giản">
     </div>
+
+    <script>
+        // Thời gian mở: 23h ngày 24/11/2024
+        const openingTime = new Date('2024-11-24T23:00:00');
+
+        function checkTime() {
+            // Lấy giờ hiện tại
+            const now = new Date();
+
+            // Nếu đã đến hoặc sau thời gian mở, hiển thị ảnh và ẩn thông báo
+            if (now >= openingTime) {
+                document.getElementById('waiting-message').classList.add('hidden');
+                document.getElementById('image-container').classList.remove('hidden');
+            } else {
+                // Tính thời gian còn lại
+                const timeLeft = openingTime - now; // Thời gian còn lại tính bằng milliseconds
+                const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                // Cập nhật thông báo thời gian chờ
+                document.getElementById('waiting-message').textContent =
+                    `Còn ${hours} giờ, ${minutes} phút, ${seconds} giây.`;
+            }
+        }
+
+        // Kiểm tra thời gian mỗi giây
+        setInterval(checkTime, 1000);
+        checkTime(); // Chạy ngay khi tải trang
+    </script>
 </body>
 </html>
